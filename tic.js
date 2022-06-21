@@ -11,15 +11,34 @@ function computerPlay() {
       return "scissor";
   }
 }
-let computerSelection = computerPlay();
-let playerSelection = prompt("enter your move");
-console.log(computerSelection);
 
 function game(playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
     return "Match Draw!!";
-  }if
-  
+  } else if (playerSelection == "rock" && computerSelection == "paper") {
+    return "player wins!";
+  } else if (playerSelection == "rock" && computerSelection == "scissor") {
+    return "computer wins!";
+  } else if (playerSelection == "paper" && computerSelection == "rock") {
+    return "computer wins!";
+  } else if (playerSelection == "paper" && computerSelection == "scissor") {
+    return "player wins";
+  } else if (playerSelection == "scissor" && computerSelection == "rock") {
+    return "computer wins!";
+  } else {
+    return "Player wins!";
+  }
 }
+function round() {
+  let computerSelection = computerPlay();
+  let playerSelection = prompt("enter your move");
+  console.log("player - " + playerSelection);
+  console.log("computer - " + computerSelection);
+  return game(playerSelection, computerSelection);
+}
+// document.getElementById("result").innerHTML = game(playerSelection, computerSelection);
+// console.log(game(playerSelection, computerSelection));
 
-console.log(game(playerSelection, computerSelection));
+for (var i = 0; i < 5; i++) {
+  console.log(round());
+}
