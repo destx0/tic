@@ -1,5 +1,8 @@
 let num = 5;
-
+let playerSelection = "paper"
+const computerh = document.getElementById('computer');
+const result = document.getElementById('result');
+const player =document.getElementById('player');
 
 function computerPlay() {
   let randNum = Math.floor(Math.random() * 3) + 1;
@@ -19,13 +22,13 @@ function game(playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
     return "Match Draw!!";
   } else if (playerSelection == "rock" && computerSelection == "paper") {
-    return "player wins!";
+    return "computer wins!";
   } else if (playerSelection == "rock" && computerSelection == "scissor") {
-    return "computer wins!";
+    return "player wins!";
   } else if (playerSelection == "paper" && computerSelection == "rock") {
-    return "computer wins!";
-  } else if (playerSelection == "paper" && computerSelection == "scissor") {
     return "player wins";
+  } else if (playerSelection == "paper" && computerSelection == "scissor") {
+    return "computer wins!";
   } else if (playerSelection == "scissor" && computerSelection == "rock") {
     return "computer wins!";
   } else {
@@ -34,7 +37,8 @@ function game(playerSelection, computerSelection) {
 }
 function round() {
   let computerSelection = computerPlay();
-  let playerSelection = prompt("enter your move");
+  computerh.innerText = "computer- " + computerSelection
+  // let playerSelection = prompt("enter your move");
   console.log("player - " + playerSelection);
   console.log("computer - " + computerSelection);
   return game(playerSelection, computerSelection);
@@ -42,7 +46,14 @@ function round() {
 // document.getElementById("result").innerHTML = game(playerSelection, computerSelection);
 // console.log(game(playerSelection, computerSelection));
 
-for (var i = 0; i < num; i++) {
-  console.log(round());
-  console.log("=".repeat(10));
+// for (var i = 0; i < num; i++) {
+//   console.log(round());
+//   console.log("=".repeat(10));
+// }
+// alert(round());
+function sel(val){
+  playerSelection = val
+  player.innerText = "player- " + playerSelection
+  result.innerText =  round();
+
 }
