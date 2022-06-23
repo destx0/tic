@@ -1,4 +1,4 @@
-let num = prompt("no of rounds");
+let num = 5;
 
 
 function computerPlay() {
