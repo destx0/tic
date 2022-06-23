@@ -1,3 +1,6 @@
+let num = prompt("no of rounds");
+
+
 function computerPlay() {
   let randNum = Math.floor(Math.random() * 3) + 1;
   switch (randNum) {
@@ -39,6 +42,7 @@ function round() {
 // document.getElementById("result").innerHTML = game(playerSelection, computerSelection);
 // console.log(game(playerSelection, computerSelection));
 
-for (var i = 0; i < 5; i++) {
+for (var i = 0; i < num; i++) {
   console.log(round());
+  console.log("=".repeat(10));
 }
