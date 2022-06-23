@@ -55,5 +55,4 @@ function sel(val){
   playerSelection = val
   player.innerText = "player- " + playerSelection
   result.innerText =  round();
-
 }
